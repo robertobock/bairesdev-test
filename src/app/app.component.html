@@ -1,0 +1,11 @@
+
+  <ngx-slick class="carousel" #slickModal="slick-modal"
+  [config]="slideConfig" (afterChange)="afterChange($event)" >
+    <div ngxSlickItem *ngFor="let album of albums; let i = index" class="slide">
+          <img src="{{ album.albumPhoto1.url }}" alt=""  class="slide-image"
+          [ngClass]="{'my-green':i==0, 'my-blue':i==1, 'my-purple':i==2}">
+          <label class="slide-title">{{album.albumPhoto1.title}}</label>
+    </div>
+  </ngx-slick>
+
+  <img src="{{ currentAlbum.albumPhoto2.url }}" alt="" width="25%" >
